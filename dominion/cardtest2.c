@@ -54,7 +54,7 @@ int main(){
   }
   if(outcome != 0){
     printf("Testing suite unsuccessful! %d errors found!\n", outcome); 
-    return 1;
+    return 0;
   }
 }
 

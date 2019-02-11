@@ -35,20 +35,20 @@ player: player.c interface.o
 
 unittestresults: dominion.o rngs.o unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c
 	gcc -o unittest1 unittest1.c -g  dominion.o rngs.o $(CFLAGS) -w
-	./unittest1 > unittestresults.out
 	gcc -o unittest2 unittest2.c -g  dominion.o rngs.o $(CFLAGS) -w
-	./unittest2 >> unittestresults.out
 	gcc -o unittest3 unittest3.c -g  dominion.o rngs.o $(CFLAGS) -w
-	./unittest3 >> unittestresults.out
 	gcc -o unittest4 unittest4.c -g  dominion.o rngs.o $(CFLAGS) -w
+	gcc -o cardtest1 cardtest1.c -g  dominion.o rngs.o $(CFLAGS) -w
+	gcc -o cardtest2 cardtest2.c -g  dominion.o rngs.o $(CFLAGS) -w
+	gcc -o cardtest3 cardtest3.c -g  dominion.o rngs.o $(CFLAGS) -w
+	gcc -o cardtest4 cardtest4.c -g  dominion.o rngs.o $(CFLAGS) -w
+	./unittest1 > unittestresults.out
+	./unittest2 >> unittestresults.out
+	./unittest3 >> unittestresults.out
 	./unittest4 >> unittestresults.out
-	gcc -o cardtest1 unittest1.c -g  dominion.o rngs.o $(CFLAGS) -w
 	./cardtest1 >> unittestresults.out
-	gcc -o cardtest2 unittest2.c -g  dominion.o rngs.o $(CFLAGS) -w
 	./cardtest2 >> unittestresults.out
-	gcc -o cardtest3 unittest3.c -g  dominion.o rngs.o $(CFLAGS) -w
 	./cardtest3 >> unittestresults.out
-	gcc -o cardtest4 unittest4.c -g  dominion.o rngs.o $(CFLAGS) -w
 	./cardtest4 >> unittestresults.out
 	gcov dominion.c >> unittestresults.out
 
