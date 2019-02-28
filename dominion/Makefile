@@ -33,6 +33,21 @@ runtests: testDrawCard
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
+randomtestadventurer: dominion.o rngs.o randomtestadventurer.o
+	gcc -o randomtestadventurer randomtestadventurer.c -g  dominion.o rngs.o $(CFLAGS) -w
+	./randomtestadventurer > randomtestadventurer.out
+	gcov -b -f dominion.c >> randomtestadventurer.out
+
+randomtestcard1: dominion.o rngs.o randomtestcard1.o
+	gcc -o randomtestcard1 randomtestcard1.c -g  dominion.o rngs.o $(CFLAGS) -w
+	./randomtestcard1 > randomtestcard1.out
+	gcov -b -f dominion.c >> randomtestcard1.out
+
+randomtestcard2: dominion.o rngs.o randomtestcard2.o
+	gcc -o randomtestcard2 randomtestcard2.c -g  dominion.o rngs.o $(CFLAGS) -w
+	./randomtestcard2 > randomtestcard2.out
+	gcov -b -f dominion.c >> randomtestcard2.out
+
 all: playdom player 
 
 clean:
