@@ -1,0 +1,24 @@
+Testing suite successful!
+Testing suite successful!
+Testing suite successful!
+Testing suite successful!
+Test Unsuccessful for out=2, expected=3.
+	Found on line 38.
+Test Unsuccessful for out=2, expected=4.
+	Found on line 47.
+Testing suite unsuccessful! 2 errors found!
+Test Unsuccessful for out=4, expected=2.
+	Found on line 38.
+Test Unsuccessful for out=2, expected=3.
+	Found on line 48.
+Testing suite unsuccessful! 2 errors found!
+Test Unsuccessful for out=2, expected=1.
+	Found on line 38.
+Test Unsuccessful for out=3, expected=2.
+	Found on line 50.
+Testing suite unsuccessful! 2 errors found!
+Testing suite successful!
+File 'dominion.c'
+Lines executed:38.61% of 562
+Creating 'dominion.c.gcov'
+
