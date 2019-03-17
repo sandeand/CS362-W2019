@@ -69,6 +69,27 @@ public class UrlValidatorTest extends TestCase {
       assertTrue(valid.isValid("file:///C:/user/andrew/eclipse/"));
    }
    
+   public void testIsValid() {
+       UrlValidator urlVal = new UrlValidator();
+       String urls[] = new String[]{"https://www.google.com", "www.google.com",
+           "http://www.google.com", "google.com", "http://google.com",
+           "http://www.google.co", "www.google.comm", "ww.google.com",
+           "www.google.com/test1", "www.google.com/../", "www.google.com//",
+           "http://www.google.co.uk", "http://user:tildeTest~@www.google.com",
+           "http://user:Under_Score_Test___@www.google.com",
+           "http://user:symbols()+$.-@www.google.com","http://www.google.com/~",
+           "http://www.google.com/*", "http://www.google.com/_$%"};
+       boolean results[] = new boolean[]{true, false, true, false, true, true,
+           false, false, false, false, false, true, true, true, true, true, true,
+           true};
+       int i = 0;
+
+       while (i != urls.length){
+           assert(urlVal.isValid(urls[i]) == results[i]);
+           i++;
+       }
+   }
+   
     // Test first partition - scheme partition
    public void testSchemePartition() {	   
 	// Store test schemes 
@@ -257,12 +278,6 @@ public class UrlValidatorTest extends TestCase {
 
    //}
    //You need to create more test cases for your Partitions if you need to 
-   
-   public void testIsValid()
-   {
-	   //You can use this function for programming based testing
-
-   }
    
 
 
